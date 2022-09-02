@@ -8,6 +8,9 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-
+  include Warden::Test::Helpers
+  Warden.test_mode!
   # Add more helper methods to be used by all tests here...
 end
+
+Capybara.save_path = Rails.root.join("tmp/capybara")
